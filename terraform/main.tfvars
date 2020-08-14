@@ -1,10 +1,10 @@
-project       = "devops-wordpress"
+project       = "devops-wordpress1"
 deploy_nat    = false
 https_enabled = false
 
 port_mappings = [
   {
-    hostPort      = 80
+    hostPort      = 0
     containerPort = 80
     protocol      = "tcp"
   }
