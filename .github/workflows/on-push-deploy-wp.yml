@@ -1,5 +1,7 @@
 name: on-push-deploy-wp
 
+# haha
+
 on:
   push:
     branches: [ master ]
@@ -8,6 +10,11 @@ on:
 jobs:
   deploy_wp:
     runs-on: ubuntu-20.04
+
+    env:
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      DOCKER_REPOSITORY: devops-wp
+      PROJECT_NAME: devops-wordpress1
 
     steps:
       - uses: actions/checkout@v2
