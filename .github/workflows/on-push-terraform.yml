@@ -1,7 +1,5 @@
 name: on-push-terraform
 
-# triger function for merge into master with changes made in terraform folder
-
 on:
   push:
     branches: [ master ]

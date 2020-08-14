@@ -1,7 +1,5 @@
 name: on-pr-terraform
 
-# triger function for pull request on master and when changes were made in terraform folder
-
 on:
   pull_request:
     branches: [ master ]
