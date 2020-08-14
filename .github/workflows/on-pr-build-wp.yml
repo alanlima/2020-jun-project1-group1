@@ -1,7 +1,5 @@
 name: on-pr-build-wp
 
-# triger function for pull request on master and when changes were made in docker folder
-
 on:
   pull_request:
     branches: [ master ]

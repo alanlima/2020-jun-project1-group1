@@ -1,5 +1,7 @@
 name: on-push-deploy-wp
 
+# haha
+
 on:
   push:
     branches: [ master ]
