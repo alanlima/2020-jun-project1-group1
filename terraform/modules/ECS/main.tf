@@ -230,6 +230,14 @@ locals {
     portMappings           = var.port_mappings
     memory                 = var.container_memory
     cpu                    = var.container_cpu
+    logConfiguration = {
+      logDriver = "awslogs",
+      options = {
+        awslogs-group = "/ecs/${var.project-name}"
+        awslogs-region = "ap-southeast-2"
+        awslogs-stream-prefix = "ecs-logs"
+      }
+    }
   }
 
   container_definition_without_null = {
@@ -299,7 +307,7 @@ resource "aws_ecs_service" "this" {
 
 resource "aws_cloudwatch_log_group" "log" {
   name              = "/ecs/${var.project-name}"
-  # retention_in_days = 30
+  retention_in_days = 30
 }
 
 resource "aws_appautoscaling_target" "main" {
