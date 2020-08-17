@@ -36,11 +36,11 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-        
+
       - name: Add Comment
         uses: jungwinter/comment@v1
         with:
           type: create
           body: "Well done ${{ secrets.ALAN_LIMA }} ! This is a nice PR"
-          issue_number: ${{ github.event.issue.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.number }}
+          token: ${{ secrets.ALAN_LIMA_TOKEN }}
