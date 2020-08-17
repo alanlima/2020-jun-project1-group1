@@ -1,0 +1,21 @@
+name: ga-actions-workflow
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'alanlima/**/*'
+
+jobs:
+  add_comment:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Add Comment
+        uses: jungwinter/comment@v1
+        with:
+          type: create
+          body: "Well done ${{ secrets.ALAN_LIMA }} ! This is a nice PR"
+          issue_number: ${{ github.event.issue.number }}
+          token: ${{ secrets.ALAN_LIMA_TOKEN }}
