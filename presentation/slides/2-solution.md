@@ -1,6 +1,8 @@
+<!-- sectionTitle: Solution Diagram -->
+
 # Solution Diagram
 
-- Speaker: **Fabio**
+> Speaker: **Fabio**
 
 Explain the diagram
 
@@ -8,9 +10,11 @@ Explain the diagram
 
 ---
 
+<!-- sectionTitle: Technologies Used -->
+
 # Technologies used
 
-- Speaker: **Alan**
+> Speaker: **Alan**
 
 > Explain the technologies stack used for this project
 
@@ -22,33 +26,42 @@ Explain the diagram
 * [Docker](https://www.docker.com/) - containerisation
 * [Docker-compose](https://docs.docker.com/compose/) - containerisation
 * [Make](https://en.wikipedia.org/wiki/Make_(software)) - automation
+* [Terraform Docs](https://github.com/terraform-docs/terraform-docs) - terraform modules documentation
 
 ## AWS Cloud Stack
 
 * EC2 Instance
 * ECS / ECR
 * MySQL Aurora DB
-* EFS - file system
+* Elastic File System (EFS)
 * CloudWatch - monitoring
-
-<!-- * [Amazon Aurora](https://aws.amazon.com/rds/aurora/) - database
-* [Amazon Elastic Container Service](https://aws.amazon.com/ecs/) - container orchestrator
-* [Amazon EFS](https://aws.amazon.com/efs/) - file storage
-* [Auto Scaling Group] -->
+* Elastic Load Balacing (LB)
+* Auto Scaling (EC2 instances creation and monitoring)
 
 ---
+<!-- sectionTitle: Version Deployment -->
 
-# How the new version is deployed
+# Version Deployment
 
-- Speaker: **Alan**
 
+> Speaker: **Alan**
+
+<!-- note 
 > Explain how the new version is deployed
 > Mention the github actions workflow
+-->
+
+- **Deployment Type:** Rolling update using ECS
+- Docker Imags will be built and pushed to ECR on changes in the docker file
+- Once that PR is merged, a new `task definition` version will be created and registered to the ECS service
+- ECS will create new tasks to replace the current (outdated) tasks
+
 
 ---
+<!-- sectionTitle: System Monitoring -->
 
 # System Monitoring
 
-- Speaker: **Mariana**
+> Speaker: **Mariana**
 
 > How the health of the system is monitored.

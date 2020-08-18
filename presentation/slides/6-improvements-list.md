@@ -1,3 +1,5 @@
+<!-- sectionTitle: Future Improvements -->
+
 # Future Improvements
 
     - HTTPS (using route 53 - SSL certificate)

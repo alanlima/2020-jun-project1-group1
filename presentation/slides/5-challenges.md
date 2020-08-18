@@ -1,6 +1,8 @@
+<!-- sectionTitle: Challenges -->
+
 # Challenges faced
 
-- Speaker: **Zara**
+> Speaker: **Zara**
 
 > Your time to say anything you want 😁
 

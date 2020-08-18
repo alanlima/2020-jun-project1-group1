@@ -13,7 +13,7 @@ slide:
       - javascript
     plugins: []
     theme: default
-  chart: false
+  chart: true
   math: false
 extends:
   js:
